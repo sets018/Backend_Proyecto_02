@@ -1,34 +1,37 @@
 const express = require('express');
 const cors = require('cors');
 const connectDB = require('./config/db');
-require('dotenv').config(); // Cargar variables de entorno
+require('dotenv').config();
 
-// Importar rutas (Las definiremos abajo)
+// Importar rutas
 const userRoutes = require('./routes/user.routes');
 const bookRoutes = require('./routes/book.routes');
+const reservationRoutes = require('./routes/reservation.routes');
 
+// 1. Inicializar app
 const app = express();
 
-// 1. Conectar a Base de Datos
+// 2. Conectar DB
 connectDB();
 
-// 2. Middlewares Globales
-app.use(cors()); // Permitir peticiones externas
-app.use(express.json()); // Permitir leer JSON en el body
+// 3. MIDDLEWARES (ESTO ES LO QUE TE FALTA O ESTÁ EN MAL LUGAR)
+app.use(cors());
+app.use(express.json()); // <--- ¡ESTA LÍNEA ES VITAL! Debe ir antes de las rutas.
 
-// 3. Definición de Rutas Base
+// 4. Definir Rutas (Ahora sí)
 app.use('/api/users', userRoutes);
 app.use('/api/books', bookRoutes);
+app.use('/api/reservations', reservationRoutes);
 
-// Ruta de prueba simple
+// Ruta base
 app.get('/', (req, res) => {
-  res.send('API Biblioteca Funcionando');
+  res.send('API Biblioteca Funcionando 🚀');
 });
 
-// 4. Iniciar Servidor
+// 5. Servidor
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-  console.log(`* Servidor corriendo en puerto ${PORT}`);
+  console.log(`✅ Servidor corriendo en puerto ${PORT}`);
 });
 
-module.exports = app; // Exportar para tests
+module.exports = app;
