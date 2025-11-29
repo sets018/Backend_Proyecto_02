@@ -6,9 +6,14 @@ Sistema de gestión para biblioteca (Usuarios, Libros, Reservas) desarrollado co
 
 Instalación y Ejecución
 
+en el directorio biblioteca-backend
+
 Instalar dependencias:
 
 npm install
+
+(para pruebas)
+npm install --save-dev node-mocks-http
 
 Configurar variables de entorno:
 
@@ -52,7 +57,7 @@ curl -X POST http://localhost:3000/api/books \
 -d '{"nombre":"El Principito","autor":"Antoine","genero":"Ficción","casa_editorial":"Reynal","fecha_publicacion":"1943-04-06"}'
 
 4. Reservar un Libro
-Reemplaza ID_LIBRO con el _id que te devolvió el paso 3
+Reemplaza ID_LIBRO con el _id del paso 3
 
 curl -X POST http://localhost:3000/api/reservations \
 -H "Content-Type: application/json" \
