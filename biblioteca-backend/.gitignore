@@ -1,6 +1,8 @@
 # Dependencias 
 node_modules/
 
+.env 
+
 # Archivos de sistema y logs
 .DS_Store
 npm-debug.log
