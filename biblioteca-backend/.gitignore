@@ -1,0 +1,7 @@
+# Dependencias 
+node_modules/
+
+# Archivos de sistema y logs
+.DS_Store
+npm-debug.log
+coverage/
