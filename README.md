@@ -29,6 +29,8 @@ Pruebas Manuales (cURL)
 
 Flujo básico para probar la API desde la terminal.
 
+(por defecto esta en el puerto 3000)
+
 1. Registrar un Administrador
 
 curl -X POST http://localhost:3000/api/users/register \
