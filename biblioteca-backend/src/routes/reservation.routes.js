@@ -6,7 +6,6 @@ const { verifyToken } = require('../middlewares/auth');
 // 1. Crear Reserva
 router.post('/', verifyToken, reservationController.createReservation);
 
-// --- RUTAS DE HISTORIAL QUE FALTABAN ---
 // 2. Historial de un Libro
 router.get('/book/:bookId', verifyToken, reservationController.getBookHistory);
 
