@@ -17,7 +17,7 @@ npm install --save-dev node-mocks-http
 
 ## Configurar variables de entorno
 
-Crea un archivo .env en el directorio biblioteca-backend
+Crear un archivo .env en el directorio biblioteca-backend
 
 PORT=3000
 
