@@ -45,8 +45,7 @@ exports.updateUser = async (req, res) => {
     const { id } = req.params;
     const { password, ...restoDatos } = req.body;
 
-    // Validación: Solo el mismo usuario o alguien con permiso 'modificar_usuarios'
-    // (Asegúrate de que tu usuario Admin tenga este permiso para probar)
+    // el mismo usuario o alguien con permiso modificar_usuarios
     const esElMismo = req.user.id === id;
     const tienePermiso = req.user.permisos && req.user.permisos.includes('modificar_usuarios');
 
