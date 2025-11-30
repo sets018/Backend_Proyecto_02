@@ -68,7 +68,7 @@ Reemplazar ID_LIBRO con el _id del paso 3
 
 curl -X POST http://localhost:3000/api/reservations \
 -H "Content-Type: application/json" \
--H "Authorization: TU_TOKEN" \
+-H "Authorization: TOKEN" \
 -d '{"bookId":"ID_LIBRO", "fecha_entrega":"2025-12-01"}'
 
 5. Ver Libros (con filtros)
