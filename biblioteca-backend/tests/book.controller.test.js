@@ -29,7 +29,7 @@ describe('Book Controller', () => {
     });
   });
 
-  // --- GET BOOKS (Complejo) ---
+  // --- GET BOOKS ---
   describe('getBooks', () => {
     it('Éxito: Retorna lista con paginación (200)', async () => {
       req.query = { page: 1, limit: 10 };
