@@ -4,24 +4,27 @@ Backend Biblioteca - API REST
 
 Sistema de gestión para biblioteca (Usuarios, Libros, Reservas) desarrollado con Node.js, Express y MongoDB.
 
-Instalación y Ejecución
+## Instalación y Ejecución
 
-en el directorio biblioteca-backend
+En el directorio biblioteca-backend
 
-Instalar dependencias:
 
 npm install
 
 (para pruebas)
+
 npm install --save-dev node-mocks-http
 
-Configurar variables de entorno:
+## Configurar variables de entorno
 
 Crea un archivo .env en el directorio biblioteca-backend
 
 PORT=3000
-MONGO_URI=tu_string_de_conexion_mongo
+
+MONGO_URI=string_de_conexion_mongo
+
 JWT_SECRET=palabra_secreta_para_token
+
 Levantar el servidor:
 
 npm run dev
@@ -32,7 +35,7 @@ npm test
 
 Pruebas Manuales (cURL)
 
-Flujo básico para probar la API desde la terminal.
+## Probar la API (manualmente) desde la terminal
 
 (por defecto esta en el puerto 3000)
 
@@ -41,23 +44,27 @@ Flujo básico para probar la API desde la terminal.
 curl -X POST http://localhost:3000/api/users/register \
 -H "Content-Type: application/json" \
 -d '{"nombre":"Admin","email":"admin@test.com","password":"123","permisos":["crear_libro", "modificar_libro", "inhabilitar_libro"]}'
+
 2. Iniciar Sesión (Login)
-Copia el "token" que devuelve este comando
+   
+Copiar el "token" que devuelve este comando
 
 curl -X POST http://localhost:3000/api/users/login \
 -H "Content-Type: application/json" \
 -d '{"email":"admin@test.com","password":"123"}'
 
 3. Crear un Libro
-Reemplaza TU_TOKEN con el token copiado en el paso anterior
+   
+Reemplazar TOKEN con el token copiado en el paso anterior
 
 curl -X POST http://localhost:3000/api/books \
 -H "Content-Type: application/json" \
--H "Authorization: TU_TOKEN" \
+-H "Authorization: TOKEN" \
 -d '{"nombre":"El Principito","autor":"Antoine","genero":"Ficción","casa_editorial":"Reynal","fecha_publicacion":"1943-04-06"}'
 
 4. Reservar un Libro
-Reemplaza ID_LIBRO con el _id del paso 3
+   
+Reemplazar ID_LIBRO con el _id del paso 3
 
 curl -X POST http://localhost:3000/api/reservations \
 -H "Content-Type: application/json" \
