@@ -62,25 +62,14 @@ touch src/routes/reservation.routes.js
 touch tests/user.controller.test.js
 touch tests/book.controller.test.js
 
-# 6. Configurar .gitignore (Importante para GitHub)
+# 6. Configurar .gitignore 
 echo "[+] Configurando .gitignore..."
 echo "node_modules/" > .gitignore
 echo ".env" >> .gitignore
 echo ".DS_Store" >> .gitignore
 echo "coverage/" >> .gitignore
 
-# 7. Configurar scripts en package.json (truco con sed/npm)
-# Agregamos el script de start y dev
+# 7. Configurar scripts en package.json 
 npm pkg set scripts.start="node src/app.js"
 npm pkg set scripts.dev="nodemon src/app.js"
 npm pkg set scripts.test="jest"
-
-echo "========================================="
-echo "¡PROYECTO CREADO EXITOSAMENTE!"
-echo "========================================="
-echo ""
-echo "Pasos siguientes:"
-echo "1. cd $PROJECT_NAME"
-echo "2. Configura tu archivo .env (MONGO_URI, JWT_SECRET)"
-echo "3. Empieza a codear en src/app.js"
-echo "4. Ejecuta 'npm run dev' para iniciar el servidor
